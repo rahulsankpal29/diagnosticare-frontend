@@ -14,6 +14,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/uploads", express.static("uploads")); // Serve static prescription images
 
+// ✅ Root route for testing server
+app.get("/", (req, res) => {
+  res.send("Welcome to DiagnostiCare Backend API");
+});
+
 // API Route Mounting
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/tests", require("./routes/testRoutes"));
